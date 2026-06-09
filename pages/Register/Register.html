@@ -4,34 +4,106 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>UGB Parkly - Cadastro</title>
+
         <link rel="stylesheet" href="../../styles/Register/style.css">
+        <script src="../../functions/hideFields.js" defer></script>
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link id="mainFavicon" rel="icon" type="image/x-icon" href="../../assets/icons/user.svg" />
     </head>
     
     <body>
         <div class="register">
             <div class="left-side">
-                <div class="logo-area">
-                    <img src="../../assets/images/ugbParklyLogo.png"> 
+                <div class="messageContainer">
+                    <div class="logo-area">
+                        <img src="../../assets/images/ugbParklyLogo.png"> 
+                    </div>
+                    <h1>Bem vindo!</h1>
+                    <p class="subtitle">
+                        Registre seus dados pessoais para começar a gerenciar seu estacionamento.
+                    </p>
                 </div>
-                <h1>Bem vindo!</h1>
-                <p class="subtitle">
-                    Registre seus dados pessoais para começar a gerenciar seu estacionamento.
-                </p>
             </div>
             <div class="right-side">
-                <form class="form-register">
+                <form class="form-register" action="../Login/Login.html">
+                    <h2>Dados do Colaborador</h2>
+
+                    <div class="input-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" required>
+                    </div>
+                
+                    <div class="input-group">
+                        <label for="matricula">Matrícula</label>
+                        <input type="number" id="matricula" required>
+                    </div>
+                
                     <div class="input-group">
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="">
+                        <input type="email" id="email" required>
                     </div>
+                
+                    <div class="input-group">
+                        <label for="tipoUsuario">Tipo de Usuário</label>
+                        <select id="tipoUsuario" required>
+                            <option value="">Selecione</option>
+                            <option value="colaborador">Colaborador</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                
+                    <div id="vehicleSection">
+                    
+                        <h2>Dados do Veículo</h2>
+                    
+                        <div class="input-group">
+                            <label for="placa">Placa</label>
+                            <input type="text" id="placa" placeholder="ABC1D23">
+                        </div>
+                    
+                        <div class="input-group">
+                            <label for="marca">Marca</label>
+                            <input type="text" id="marca">
+                        </div>
+                    
+                        <div class="input-group">
+                            <label for="modelo">Modelo</label>
+                            <input type="text" id="modelo">
+                        </div>
+                    
+                        <div class="input-group">
+                            <label for="cor">Cor</label>
+                            <input type="text" id="cor">
+                        </div>
+                    
+                    </div>
+                
+                    <h2>Acesso ao Sistema</h2>
+                
                     <div class="input-group">
                         <label for="senha">Senha</label>
-                        <input type="password" id="senha" placeholder="">
+                        <input type="password" id="senha" required>
                     </div>
-                    <button class="btn-register">Cadastrar</button>
+                
+                    <div class="input-group">
+                        <label for="confirmarSenha">Confirmar Senha</label>
+                        <input type="password" id="confirmarSenha" required>
+                    </div>
+                
+                    <div class="input-group">
+                        <label for="status">Status</label>
+                        <select id="status">
+                            <option value="ativo">Ativo</option>
+                            <option value="inativo">Inativo</option>
+                        </select>
+                    </div>
+                
+                    <button type="submit" class="btn-register">
+                        Cadastrar Usuário
+                    </button>
                 </form>
             </div>
         </div>
