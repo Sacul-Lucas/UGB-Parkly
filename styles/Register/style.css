@@ -76,7 +76,7 @@ body {
 }
 
 
-.form-login {
+.form-register {
     width: 100%;
     max-width: 580px;
     display: flex;
@@ -125,6 +125,6 @@ body {
     transition: background 0.2s;
 }
 
-.btn-login:hover {
+.btn-register:hover {
     background-color: #243354;
 }
