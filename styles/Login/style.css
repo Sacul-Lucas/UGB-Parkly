@@ -166,6 +166,33 @@ body {
     transform: translateY(-2px);
 }
 
+.input-group input.error,
+.input-group select.error {
+    border-color: #e63946;
+    background-color: #fff5f5;
+}
+
+.input-group input.success,
+.input-group select.success {
+    border-color: #2a9d8f;
+    background-color: #f0fff8;
+}
+
+.error-message {
+    color: #e63946;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.error-message.show {
+    max-height: 30px;
+    opacity: 1;
+}
+
 .btn-login {
     display: block;
     background: linear-gradient(135deg, #1951CB 0%, #1839a0 100%);

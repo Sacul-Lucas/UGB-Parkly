@@ -192,13 +192,31 @@ body {
     padding-right: 2.5rem;
 }
 
-#vehicleSection {
-    display: none;
-    width: 100%;
-    max-width: 520px;
-    flex-direction: column;
-    gap: 1.8rem;
-    padding-top: 1rem;
+.input-group input.error,
+.input-group select.error {
+    border-color: #e63946;
+    background-color: #fff5f5;
+}
+
+.input-group input.success,
+.input-group select.success {
+    border-color: #2a9d8f;
+    background-color: #f0fff8;
+}
+
+.error-message {
+    color: #e63946;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.error-message.show {
+    max-height: 30px;
+    opacity: 1;
 }
 
 .btn-register {
