@@ -244,6 +244,7 @@ main {
   border-radius: 14px;
   padding: 20px 22px;
   border: 1.5px solid var(--card-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
 }
 
 .stat-label {
@@ -340,6 +341,7 @@ main {
   border-radius: 16px;
   border: 1.5px solid var(--card-border);
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, .05);
 }
 
 .table-header {

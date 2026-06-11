@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UGB Parkly - Administração de usuários</title>
+
+        <link rel="stylesheet" href="../../styles/Users/style.css">
+        <script src="../../functions/userManagementModal.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link id="mainFavicon" rel="icon" type="image/x-icon" href="../../assets/icons/userGroup.svg" />
+    </head>
+    <body>
+        <main>
+            <nav class="sidebar">
+
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <img src="../../assets/images/ugbParklyLogo.png" alt="UGB Parkly">
+                        <span>UGB Parkly</span>
+                    </div>
+                </div>
+            
+                <ul class="menu">
+                    <li>
+                        <a href="../Dashboard/Dashboard.html">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="#" class="active">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Usuários</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../VehicleControl/VehicleControl.html">
+                            <i class="fa-solid fa-car"></i>
+                            <span>Veículos</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-right-left"></i>
+                            <span>Movimentações</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                </ul>
+            
+                <div class="sidebar-footer">
+                    <div class="user-card">
+                        <div class="avatar">
+                            A
+                        </div>
+                    
+                        <div class="user-info">
+                            <strong>Admin</strong>
+                            <span>Administrador</span>
+                        </div>
+                    </div>
+                </div>
+            
+            </nav>
+
+            <div class="usersContainer">
+                <header class="pageHeader">
+                    <div>
+                        <h1>Administração de Usuários</h1>
+                        <p>Gerencie colaboradores e administradores do sistema.</p>
+                    </div>
+                
+                    <button class="btnPrimary" onclick="openModal()">
+                        <i class="fa-solid fa-plus"></i>
+                        Novo Usuário
+                    </button>
+                </header>
+
+                <section class="userStats">
+                
+                    <div class="statCard">
+                        <h2>18</h2>
+                        <span>Total de Usuários</span>
+                    </div>
+                
+                    <div class="statCard">
+                        <h2>15</h2>
+                        <span>Colaboradores</span>
+                    </div>
+                
+                    <div class="statCard">
+                        <h2>3</h2>
+                        <span>Administradores</span>
+                    </div>
+                
+                    <div class="statCard">
+                        <h2>16</h2>
+                        <span>Usuários Ativos</span>
+                    </div>
+                
+                </section>
+
+                <section class="tableContainer">
+                
+                    <div class="tableHeader">
+                    
+                        <div class="searchBox">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input
+                                type="text"
+                                placeholder="Pesquisar usuário..."
+                            >
+                        </div>
+                    
+                        <select>
+                            <option>Todos</option>
+                            <option>Administrador</option>
+                            <option>Colaborador</option>
+                        </select>
+                    
+                    </div>
+                
+                    <table>
+                    
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Matrícula</th>
+                                <th>E-mail</th>
+                                <th>Tipo</th>
+                                <th>Veículo</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                    
+                        <tbody>
+                        
+                            <tr>
+                                <td>Lucas Martins</td>
+                                <td>2023001</td>
+                                <td>lucas@ugb.edu.br</td>
+                                <td>Administrador</td>
+                                <td>-</td>
+                            
+                                <td>
+                                    <span class="badge active">
+                                        Ativo
+                                    </span>
+                                </td>
+                            
+                                <td>
+                                    <button
+                                        class="btnAction edit"
+                                        onclick="editUser(1)"
+                                    >
+                                        Editar
+                                    </button>
+                                
+                                    <button class="btnAction delete">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Ana Silva</td>
+                                <td>2023015</td>
+                                <td>ana@ugb.edu.br</td>
+                                <td>Colaborador</td>
+                                <td>ABC1D23</td>
+                            
+                                <td>
+                                    <span class="badge active">
+                                        Ativo
+                                    </span>
+                                </td>
+                            
+                                <td>
+                                    <button
+                                        class="btnAction edit"
+                                        onclick="editUser(2)"
+                                    >
+                                        Editar
+                                    </button>
+                                
+                                    <button class="btnAction delete">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                <td>Carlos Souza</td>
+                                <td>2023040</td>
+                                <td>carlos@ugb.edu.br</td>
+                                <td>Colaborador</td>
+                                <td>DEF4G56</td>
+                            
+                                <td>
+                                    <span class="badge inactive">
+                                        Inativo
+                                    </span>
+                                </td>
+                            
+                                <td>
+                                    <button
+                                        class="btnAction edit"
+                                        onclick="editUser(3)"
+                                    >
+                                        Editar
+                                    </button>
+                                
+                                    <button class="btnAction delete">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+
+        <!-- MODAL USUÁRIO -->
+
+        <div class="modalOverlay" id="userModal">
+        
+            <div class="modal">
+            
+                <div class="modalHeader">
+                    <h2 id="modalTitle">Novo Usuário</h2>
+                
+                    <button
+                        type="button"
+                        id="closeModal"
+                        onclick="closeModal()"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            
+                <form
+                    class="userForm"
+                    id="userForm"
+                >
+            
+                    <!-- DADOS PESSOAIS -->
+            
+                    <section>
+                    
+                        <h3>Dados Pessoais</h3>
+                    
+                        <div class="formGrid">
+                        
+                            <div class="inputGroup">
+                                <label for="nome">
+                                    Nome Completo
+                                </label>
+                            
+                                <input
+                                    type="text"
+                                    id="nome"
+                                    name="nome"
+                                    required
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="matricula">
+                                    Matrícula
+                                </label>
+                            
+                                <input
+                                    type="number"
+                                    id="matricula"
+                                    name="matricula"
+                                    required
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="email">
+                                    E-mail
+                                </label>
+                            
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="userType">
+                                    Tipo de Usuário
+                                </label>
+                            
+                                <select
+                                    id="userType"
+                                    name="tipoUsuario"
+                                >
+                                    <option value="colaborador">
+                                        Colaborador
+                                    </option>
+                                
+                                    <option value="administrador">
+                                        Administrador
+                                    </option>
+                                </select>
+                            </div>
+                        
+                        </div>
+                    
+                    </section>
+                
+                    <!-- DADOS VEÍCULO -->
+                
+                    <section id="vehicleSection">
+                    
+                        <h3>Dados do Veículo</h3>
+                    
+                        <div class="formGrid">
+                        
+                            <div class="inputGroup">
+                                <label for="placa">
+                                    Placa
+                                </label>
+                            
+                                <input
+                                    type="text"
+                                    id="placa"
+                                    name="placa"
+                                    placeholder="ABC1D23"
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="marca">
+                                    Marca
+                                </label>
+                            
+                                <input
+                                    type="text"
+                                    id="marca"
+                                    name="marca"
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="modelo">
+                                    Modelo
+                                </label>
+                            
+                                <input
+                                    type="text"
+                                    id="modelo"
+                                    name="modelo"
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="cor">
+                                    Cor
+                                </label>
+                            
+                                <input
+                                    type="text"
+                                    id="cor"
+                                    name="cor"
+                                >
+                            </div>
+                        
+                        </div>
+                    
+                    </section>
+                
+                    <!-- ACESSO -->
+                
+                    <section>
+                    
+                        <h3>Acesso ao Sistema</h3>
+                    
+                        <div class="formGrid">
+                        
+                            <div class="inputGroup">
+                                <label for="senha">
+                                    Senha
+                                </label>
+                            
+                                <input
+                                    type="password"
+                                    id="senha"
+                                    name="senha"
+                                    required
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="confirmarSenha">
+                                    Confirmar Senha
+                                </label>
+                            
+                                <input
+                                    type="password"
+                                    id="confirmarSenha"
+                                    name="confirmarSenha"
+                                    required
+                                >
+                            </div>
+                        
+                            <div class="inputGroup">
+                                <label for="status">
+                                    Status
+                                </label>
+                            
+                                <select
+                                    id="status"
+                                    name="status"
+                                >
+                                    <option value="ativo">
+                                        Ativo
+                                    </option>
+                                
+                                    <option value="inativo">
+                                        Inativo
+                                    </option>
+                                </select>
+                            </div>
+                        
+                        </div>
+                    
+                    </section>
+                
+                    <!-- AÇÕES -->
+                
+                    <div class="modalActions">
+                    
+                        <button
+                            type="button"
+                            class="btnSecondary"
+                            id="cancelModal"
+                            onclick="closeModal()"
+                        >
+                            Cancelar
+                        </button>
+                    
+                        <button
+                            type="submit"
+                            class="btnPrimary"
+                            id="saveUserBtn"
+                        >
+                            Salvar Usuário
+                        </button>
+                    
+                    </div>
+                
+                </form>
+            
+            </div>
+        
+        </div>
+        
+        </div>
+    </body>
+</html>

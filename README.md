@@ -239,8 +239,7 @@ Abra o arquivo `index.html` em seu navegador ou utilize uma extensão como **Liv
 * [x] Tela de Login
 * [x] Cadastro de Usuários
 * [x] Cadastro de Veículos
-* [ ] Dashboard Administrativo
-* [ ] Controle de Vagas
+* [x] Dashboard Administrativo
 * [ ] Relatórios
 * [ ] Integração completa com API
 * [ ] Controle visual das vagas
