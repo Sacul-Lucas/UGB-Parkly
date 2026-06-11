@@ -6,7 +6,7 @@
         <title>UGB Parkly - Dashboard</title>
 
         <link rel="stylesheet" href="../../styles/Dashboard/style.css">
-        <script src="../../functions/hideFields.js" defer></script>
+        <!-- <script src="../../functions/hideFields.js" defer></script> -->
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
                     </li>
                 
                     <li>
-                        <a href="#">
+                        <a href="../Users/Users.html">
                             <i class="fa-solid fa-users"></i>
                             <span>Usuários</span>
                         </a>
@@ -44,13 +44,6 @@
                         <a href="../VehicleControl/VehicleControl.html">
                             <i class="fa-solid fa-car"></i>
                             <span>Veículos</span>
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="#">
-                            <i class="fa-solid fa-square-parking"></i>
-                            <span>Controle de Vagas</span>
                         </a>
                     </li>
                 
@@ -84,7 +77,217 @@
             
             </nav>
 
-            <div></div>
+            <div class="dashContainer">
+                <header class="dashboardHeader">
+                  <div>
+                    <h1>Dashboard</h1>
+                    <p>Visão geral do estacionamento UGB Parkly</p>
+                  </div>
+              
+                  <button class="btnExport">
+                    <i class="fa-solid fa-file-arrow-down"></i>
+                    Exportar Relatório
+                  </button>
+                </header>
+                
+                <section class="cards">
+                  <div class="card">
+                    <div class="cardIcon blue">
+                      <i class="fa-solid fa-car"></i>
+                    </div>
+                
+                    <div>
+                      <h2>38</h2>
+                      <span>Veículos no estacionamento</span>
+                    </div>
+                  </div>
+              
+                  <div class="card">
+                    <div class="cardIcon green">
+                      <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </div>
+                
+                    <div>
+                      <h2>74</h2>
+                      <span>Entradas hoje</span>
+                    </div>
+                  </div>
+              
+                  <div class="card">
+                    <div class="cardIcon red">
+                      <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    </div>
+                
+                    <div>
+                      <h2>36</h2>
+                      <span>Saídas hoje</span>
+                    </div>
+                  </div>
+              
+                  <div class="card">
+                    <div class="cardIcon purple">
+                      <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                
+                    <div>
+                      <h2>12</h2>
+                      <span>Vagas disponíveis</span>
+                    </div>
+                  </div>
+                </section>
+                
+                <section class="dashboardGrid">
+                
+                  <div class="panel occupancyPanel">
+                    <div class="panelHeader">
+                      <h3>Ocupação Atual</h3>
+                      <span>76%</span>
+                    </div>
+                
+                    <div class="progressBar">
+                      <div class="progress"></div>
+                    </div>
+                
+                    <div class="parkingInfo">
+                      <div>
+                        <strong>50</strong>
+                        <span>Total de vagas</span>
+                      </div>
+                  
+                      <div>
+                        <strong>38</strong>
+                        <span>Ocupadas</span>
+                      </div>
+                  
+                      <div>
+                        <strong>12</strong>
+                        <span>Livres</span>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div class="panel">
+                    <div class="panelHeader">
+                      <h3>Últimos Veículos Registrados</h3>
+                    </div>
+                
+                    <ul class="vehicleList">
+                    
+                      <li>
+                        <div>
+                          <strong>ABC-1A23</strong>
+                          <span>Toyota Corolla</span>
+                        </div>
+                    
+                        <small>Há 5 min</small>
+                      </li>
+                  
+                      <li>
+                        <div>
+                          <strong>DEF-4B56</strong>
+                          <span>Honda Civic</span>
+                        </div>
+                    
+                        <small>Há 12 min</small>
+                      </li>
+                  
+                      <li>
+                        <div>
+                          <strong>GHI-7C89</strong>
+                          <span>Hyundai HB20</span>
+                        </div>
+                    
+                        <small>Há 18 min</small>
+                      </li>
+                  
+                      <li>
+                        <div>
+                          <strong>JKL-2D10</strong>
+                          <span>Chevrolet Onix</span>
+                        </div>
+                    
+                        <small>Há 25 min</small>
+                      </li>
+                  
+                    </ul>
+                  </div>
+              
+                </section>
+                
+                <section class="panel tablePanel">
+                
+                  <div class="panelHeader">
+                    <h3>Movimentações Recentes</h3>
+                  </div>
+              
+                  <table>
+                
+                    <thead>
+                      <tr>
+                        <th>Placa</th>
+                        <th>Motorista</th>
+                        <th>Entrada</th>
+                        <th>Vaga</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                
+                    <tbody>
+                    
+                      <tr>
+                        <td>ABC-1A23</td>
+                        <td>Lucas Martins</td>
+                        <td>08:10</td>
+                        <td>A12</td>
+                        <td>
+                          <span class="status active">
+                            Estacionado
+                          </span>
+                        </td>
+                      </tr>
+                  
+                      <tr>
+                        <td>DEF-4B56</td>
+                        <td>Maria Souza</td>
+                        <td>08:24</td>
+                        <td>B08</td>
+                        <td>
+                          <span class="status active">
+                            Estacionado
+                          </span>
+                        </td>
+                      </tr>
+                  
+                      <tr>
+                        <td>QWE-9F45</td>
+                        <td>João Pedro</td>
+                        <td>07:55</td>
+                        <td>C03</td>
+                        <td>
+                          <span class="status exit">
+                            Saiu
+                          </span>
+                        </td>
+                      </tr>
+                  
+                      <tr>
+                        <td>RTY-7K11</td>
+                        <td>Ana Clara</td>
+                        <td>07:30</td>
+                        <td>D01</td>
+                        <td>
+                          <span class="status exit">
+                            Saiu
+                          </span>
+                        </td>
+                      </tr>
+                  
+                    </tbody>
+                
+                  </table>
+              
+                </section>
+            </div>
         </main>
     </body>
 </html>
