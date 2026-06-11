@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UGB Parkly - Relatórios</title>
+
+        <link rel="stylesheet" href="../../styles/Reports/Reports.css">
+        <script src="../../functions/reports.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link id="mainFavicon" rel="icon" type="image/x-icon" href="../../assets/icons/chartLine.svg" />
+    </head>
+    <body>
+        <main>
+            <nav class="sidebar">
+
+                <div class="sidebar-header">
+                    <div class="logo">
+                        <img src="../../assets/images/ugbParklyLogo.png" alt="UGB Parkly">
+                        <span>UGB Parkly</span>
+                    </div>
+                </div>
+            
+                <ul class="menu">
+                    <li>
+                        <a href="../Dashboard/Dashboard.html">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../Users/Users.html">
+                            <i class="fa-solid fa-users"></i>
+                            <span>Usuários</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../VehicleControl/VehicleControl.html">
+                            <i class="fa-solid fa-car"></i>
+                            <span>Veículos</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="../Movements/Movements.html">
+                            <i class="fa-solid fa-right-left"></i>
+                            <span>Movimentações</span>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="#" class="active">
+                            <i class="fa-solid fa-chart-column"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                </ul>
+            
+                <div class="sidebar-footer">
+                    <div class="user-card">
+                        <div class="avatar">
+                            A
+                        </div>
+                    
+                        <div class="user-info">
+                            <strong>Admin</strong>
+                            <span>Administrador</span>
+                        </div>
+                    </div>
+                </div>
+            
+            </nav>
+
+            <div class="reportsContainer">
+                <header class="pageHeader">
+                
+                    <div>
+                        <h1>Relatórios</h1>
+                    
+                        <p>
+                            Visualize e exporte dados operacionais do estacionamento.
+                        </p>
+                    </div>
+                
+                    <button class="btn btn-primary" id="exportCSV">
+                        <i class="fa-solid fa-file-csv"></i>
+                        Exportar CSV
+                    </button>
+                
+                </header>
+
+                <section class="reportStats">
+                
+                    <div class="statCard">
+                        <h2 id="totalMovements">0</h2>
+                        <span>Movimentações</span>
+                    </div>
+                
+                    <div class="statCard">
+                        <h2 id="totalEntries">0</h2>
+                        <span>Entradas</span>
+                    </div>
+                
+                    <div class="statCard">
+                        <h2 id="totalExits">0</h2>
+                        <span>Saídas</span>
+                    </div>
+                
+                    <div class="statCard">
+                        <h2 id="averageStay">0h</h2>
+                        <span>Permanência Média</span>
+                    </div>
+                
+                </section>
+
+                <section class="filtersPanel">
+                
+                    <div class="filterGroup">
+                        <label>Data Inicial</label>
+                        <input type="date" id="startDate">
+                    </div>
+                
+                    <div class="filterGroup">
+                        <label>Data Final</label>
+                        <input type="date" id="endDate">
+                    </div>
+                
+                    <div class="filterGroup">
+                        <label>Status</label>
+                    
+                        <select id="statusFilter">
+                            <option value="all">Todos</option>
+                            <option value="estacionado">Estacionados</option>
+                            <option value="saida">Saíram</option>
+                        </select>
+                    </div>
+                
+                    <div class="filterGroup">
+                        <label>Período</label>
+                    
+                        <select id="shiftFilter">
+                            <option value="all">Todos</option>
+                            <option value="manha">Manhã</option>
+                            <option value="tarde">Tarde</option>
+                            <option value="noite">Noite</option>
+                        </select>
+                    </div>
+                
+                    <div class="filterGroup searchFilter">
+                        <label>Placa</label>
+                    
+                        <input
+                            type="text"
+                            id="plateFilter"
+                            placeholder="ABC1D23"
+                        >
+                    </div>
+                
+                </section>
+
+                <section class="chartsGrid">
+                
+                    <div class="chartCard">
+                        <h3>Entradas x Saídas</h3>
+                        <canvas id="movementChart"></canvas>
+                    </div>
+                
+                    <div class="chartCard">
+                        <h3>Status dos Veículos</h3>
+                        <canvas id="statusChart"></canvas>
+                    </div>
+                
+                </section>
+
+                <section class="tableContainer">
+                
+                    <table>
+                    
+                        <thead>
+                        
+                            <tr>
+                                <th>Data</th>
+                                <th>Horário</th>
+                                <th>Placa</th>
+                                <th>Modelo</th>
+                                <th>Status</th>
+                                <th>Permanência</th>
+                            </tr>
+                        
+                        </thead>
+                    
+                        <tbody id="reportTableBody"></tbody>
+                    
+                    </table>
+                
+                </section>
+            </div>
+        </main>
+    </body>
+</html>
